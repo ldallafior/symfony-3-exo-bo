@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="row" >
+    <div class="col text-center">
+        <h1>Contact  </h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+        <button type="submit"  class="fa fa-envelope"> </button>
+            {{ form_end(form) }}
+        <ul>
+        <li>
+            <button> <a href="{{ path('contact_index') }}" type="submit" class="">back-office </a></button>
+        </li>
+    </ul>
+    </div>
+    </div>
+    </form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

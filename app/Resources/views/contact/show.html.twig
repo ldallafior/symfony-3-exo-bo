@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col">
+
+
+    <h1>Contact</h1>
+<div >
+    <table >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+            <tr>
+                <th >Nom</th>
+                <td>{{ contact.nom }}</td>
+            </tr>
+            <tr>
+                <th >Email</th>
+                <td >{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th >Question</th>
+                <td >{{ contact.question }}</td>
+            </tr>
+            <tr>
+                <th>Lu</th>
+                <td>{% if contact.lu %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+        <ul class="list-group">
+            <li class="list-group-item align-items-center">
+
+            <a href="{{ path('contact_index') }}">back-office </a>
+        </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item align-items-center">
+                <a href="{{ path('contact_edit', { 'id': contact.id }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item align-items-center">
+                {{ form_start(delete_form) }}
+    </div>
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

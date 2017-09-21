@@ -1,0 +1,10 @@
+
+
+table, tr, td {
+   border: solid 1px black;
+   padding: 1.5em;
+}
+
+li.list-group-item.align-items-center {
+   border: none;
+}

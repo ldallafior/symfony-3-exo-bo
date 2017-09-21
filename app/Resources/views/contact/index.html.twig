@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>back-office </h1>
+    <a href="{{ path('logout') }}" >se déconnecter</a>
+    <div class="row">
+    <table class="col">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Question</th>
+                <th>Lu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
+                <td>{{ contact.nom }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.question }}</td>
+                <td>{% if contact.lu %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul class="list-group">
+                        <li class="list-group-item align-items-center">
+                            <a href="{{ path('contact_show', { 'id': contact.id }) }}"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                        </li>
+                        <li class="list-group-item align-items-center">
+                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
+
