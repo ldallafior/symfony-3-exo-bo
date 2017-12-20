@@ -1,4 +1,2 @@
-acseo
-=====
-
-A Symfony project created on September 10, 2017, 1:15 pm.
+Symfony avec un Back-office 
+Environnement Technique : PHP, ,  GIT, Symfony 3, FOSUserBundle
